@@ -16,21 +16,23 @@ $result = mysqli_query($link, $query);
 </head>
 
 <body>
-        <table style="width:100%">
+    <div class="table">
+    <table style="width:100%">
+        <tr>
+            <th>#</th>
+            <th>NOME</th>
+            <th>CNPJ</th>
+        </tr>
+        <?php while($row = mysqli_fetch_assoc($result)):?>
             <tr>
-                <th>CODIGO ID</th>
-                <th>NOME</th>
-                <th>CNPJ</th>
+                <?php echo "<td>{$row['id_cliente']}</td>"?>
+                <?php echo "<td>{$row['nome_cliente']}</td>"?>
+                <?php echo "<td>{$row['cnpj_cliente']}</td>"?>
             </tr>
-            <?php while($row = mysqli_fetch_assoc($result)):?>
-                <tr>
-                    <?php echo "<td>{$row['id_cliente']}</td>"?>
-                    <?php echo "<td>{$row['nome_cliente']}</td>"?>
-                    <?php echo "<td>{$row['cnpj_cliente']}</td>"?>
-                </tr>
-            <?php endwhile;?>
-                
-        </table>
+        <?php endwhile;?>
+            
+    </table>
+    </div>
     
 </body>
 </html>

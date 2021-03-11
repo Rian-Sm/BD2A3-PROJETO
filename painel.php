@@ -36,7 +36,7 @@ include('./verifica_login.php');
                 <div class="card-body">
                     <h5 class="card-title">Pesquisar</h5>
                     <p class="card-text">pesquisar por assinaturas</p>
-                    <a href="#" class="btn btn-primary">Pesquisa</a>
+                    <a href="./pesquisa" class="btn btn-primary">Pesquisa</a>
                 </div>
             </div>
             </div>

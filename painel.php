@@ -31,7 +31,7 @@ include('./verifica_login.php');
 
     <div class= "section mb-5 container">
         <div class="row mt-3 justify-center pb-5 mt-5 ">
-            <div class=" col-md-6 col-lg-4 mb-3">
+            <div class=" col-md-6 col-lg-3 mb-3">
             <div class="card" style="width: 20rem;">
                 <div class="card-body">
                     <h5 class="card-title">Pesquisar</h5>
@@ -41,7 +41,7 @@ include('./verifica_login.php');
             </div>
             </div>
 
-            <div class="col-md-6 col-lg-4 mb-3">
+            <div class="col-md-6 col-lg-3 mb-3">
             <div class="card" style="width: 20rem;">
                     <div class="card-body">
                         <h5 class="card-title">Cadastro de clientes</h5>
@@ -51,12 +51,22 @@ include('./verifica_login.php');
             </div>
             </div>
 
-            <div class="col-md-6 col-lg-4 mb-3">
+            <div class="col-md-6 col-lg-3 mb-3">
             <div class="card" style="width: 20rem;">
                     <div class="card-body">
                         <h5 class="card-title">Cadastro de Licenças</h5>
                         <p class="card-text">Cadastre Licenças</p>
                         <a href="./licenca" class="btn btn-primary">Cadastre</a>
+                    </div>
+            </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3 mb-3">
+            <div class="card" style="width: 20rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Cadastro de Assinatura</h5>
+                        <p class="card-text">Cadastre Assinatura</p>
+                        <a href="./cliente#assinatura" class="btn btn-primary">Cadastre</a>
                     </div>
             </div>
             </div>

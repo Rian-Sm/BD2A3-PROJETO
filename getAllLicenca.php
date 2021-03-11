@@ -17,7 +17,7 @@ $result = mysqli_query($link, $query);
 
 <body>
     <div class="table">
-    <table>
+    <table style="width: 100%">
         <tr>
             <th >#</th>
             <th>NOME</th>

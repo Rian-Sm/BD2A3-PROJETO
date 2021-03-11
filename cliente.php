@@ -2,9 +2,11 @@
 session_start();
 include('./source/connect.php');
 include('./verifica_login.php');
-$query = 'SELECT * from cliente;';
+$query = 'SELECT * from licenca ORDER BY id_licenca;';
 
-$result = mysqli_query($link, $query);
+$licencas = mysqli_query($link, $query);
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,8 +36,10 @@ $result = mysqli_query($link, $query);
     
     </nav>
 
-    <div class= "section mb-5 container">
-        <div class="mt-3 justify-center pb-3 mt-5 ">
+    <section class= "section mb-5 container">
+    
+    <div>
+        <div class="justify-center pb-3 mt-5 ">
             <h2>Cadastro de Clientes</h2>
         </div>
 
@@ -54,7 +58,7 @@ $result = mysqli_query($link, $query);
         
 
         <div class="row">
-            <form class="col-md-6" method="POST" action="./createCliente">
+            <form class="col-md-6 col-sm-12" method="POST" action="./createCliente">
                 <div class="row mb-3 mt-5">
                     <h3 class="col-12 mb-5">Novo Cliente:</h2>
                     <label class="col-md-4" for="nome_cliente" >Nome do cliente:</label>
@@ -69,7 +73,7 @@ $result = mysqli_query($link, $query);
                 </div>
             </form> 
 
-            <div class="col-md-6 mt-5">          
+            <div class="col-md-6 mt-5 col-sm-12">          
                     <h3>Clientes cadastrados:</h3>
                     <div class="embed-responsive embed-responsive-21by9">
                     <iframe class="embed-responsive-item" src="./getAllCliente"></iframe>
@@ -78,7 +82,7 @@ $result = mysqli_query($link, $query);
         </div>
 
         <div class="row my-5">
-        <form class="col-md-6" method="POST" action="./alterateCliente">
+        <form class="col-md-6 col-sm-12" method="POST" action="./alterateCliente">
 
                 <div class="row mb-3">
                     <h3 class="col-12 mb-5">Alterar Dados:</h3>
@@ -95,14 +99,14 @@ $result = mysqli_query($link, $query);
                     <input class="col-md-7" type="text"  id="cnpj_cliente_at" name="cnpj_cliente">
                 </div>
                 <div class="row mb-3 justify-content-center">
-                <button col="col" type="submit" class="btn btn-primary">Modificar</button> 
+                <button col="col mb-5" type="submit" class="btn btn-primary">Modificar</button> 
                     
                 </div>
             </form> 
 
             <form class="col-md-6 alert alert-danger" role="alert" method="POST" action="./deleteCliente">
 
-                <div class="row mb-3">
+                <div class="row mb-5">
                     <h3 class="col-12 mb-5 ">Deletar dados:</h3>
 
                     <p class='col-12'>Cuidado ao deletar dados, ele são perdidos permanentemente.</p>
@@ -116,6 +120,84 @@ $result = mysqli_query($link, $query);
         
         </div>
     </div>
+
+    <div class="my-5">
+        <div class="justify-center pb-3 mt-5 ">
+            <h2 id="assinatura">Cadastro de Assinaturas</h2>
+        </div>
+
+        <div class="row my-5">
+        <form class="col-md-5 col-sm-12" method="POST" action="./createAssinatura">
+
+                <div class="row mb-3">
+                    <h3 class="col-12 mb-5">Criar Assinatura:</h3>
+                    <label class="col-md-4" for="cnpj_cliente">CNPJ:</label>
+                    <input class="col-md-7" type="text"  id="cnpj_cliente" name="cnpj_cliente">
+                </div>
+
+                <div class="row mb-3 ">
+                    <label class="col-md-4" for="id_licenca" >Licença:</label>
+                    <select class="col-md-7" name="id_licenca" id="id_licenca">
+                        <?php 
+                            if (mysqli_num_rows($licencas) > 0){
+                                while($row = mysqli_fetch_array($licencas)){
+                                    $opt = "<option value={$row['id_licenca']}>{$row['nome_licenca']}, ({$row['versao_sistema']})</option>";
+                                    echo $opt;
+                                }
+                            }
+                        ?>
+                    </select>
+                </div>
+
+                <div class="row mb-3">
+                    <label class="col-md-4" for="estacao">Estação:</label>
+                    <input class="col-md-7" type="number"  id="estacao" name="estacao" min=1>
+                </div>
+
+                <div class="row mb-3">
+                    <label class="col-md-4" for="key_assinatura">key do sistema:</label>
+                    <input class="col-md-7" type="text"  id="key_assinatura" name="key_assinatura">
+                </div>
+                <div class="row mb-3">
+                    <label class="col-md-4" for="data_aquisicao">Data da Assinatura: 
+                    </label>
+                    <input class="col-md-7" type="date"  id="data_aquisicao" name="data_aquisicao"  max=<?php 
+                        echo date('Y-m-d');
+                    ?> value=<?php echo date('Y-m-d');?>>
+                </div>
+                <div class="row mb-3">
+                    <label class="col-md-4" for="date_final_aquisicao">Data Final da Assinatura: 
+                    </label>
+                    <input class="col-md-7" type="date"  id="date_final_aquisicao" name="date_final_aquisicao" min=<?php 
+                        echo date('Y-m-d');
+                    ?>>
+                </div>
+                <div class="row mb-3">
+                    <label class="col-md-4" for="atualizado">Atualizado:</label>
+                    <input class="col-md-1" type="checkbox"  id="atualizado" name="atualizado" value="true">
+                </div>
+                <div class="row mb-3">
+                    <label class="col-md-4" for="confirmado">Confirmado:</label>
+                    <input class="col-md-1" type="checkbox"  id="confirmado" name="confirmado" value="true">
+                </div>
+
+                <div class="row mb-3 justify-content-center">
+                <button col="col" type="submit" class="btn btn-primary">Enviar</button> 
+                    
+                </div>
+            </form> 
+            <div class="col-md-7 col-sm-12">
+                <h3>Clientes cadastrados:</h3>
+                <div class="embed-responsive embed-responsive-21by9">
+                <iframe class="embed-responsive-item" src="./getAllAssinatura"></iframe>
+            </div>  
+        </div>  
+        </div>
+    </div>
+
+    
+    </section>
+    
     <footer class="footer mt-auto py-3 bg-light mt-5">
         <div class="container">
             <span class="text-muted">Coloque o conteúdo do rodapé fixo aqui.</span>

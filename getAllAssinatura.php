@@ -22,6 +22,8 @@ $result = mysqli_query($link, $query);
             <th >#</th>
             <th>CNPJ</th>
             <th>NOME LICENÇA</th>
+            <th>TIPO DE SISTEMA</th>
+            <th>VERSÃO DO SISTEMA</th>
             <th>ESTAÇÃO</th>
             <th>CHAVE GERADA</th>
             <th>DATA AQUISIÇÃO</th>
@@ -34,6 +36,8 @@ $result = mysqli_query($link, $query);
                 <?php echo "<td>{$row['id_aquisicao']}</td>"?>
                 <?php echo "<td>{$row['cnpj_cliente']}</td>"?>
                 <?php echo "<td>{$row['nome_licenca']}</td>"?>
+                <?php echo "<td>{$row['tipo_sistema']}</td>"?>
+                <?php echo "<td>{$row['versao_sistema']}</td>"?>
                 <?php echo "<td>{$row['estacao']}</td>"?>
                 <?php echo "<td>{$row['key_assinatura']}</td>"?>
                 <?php echo "<td>{$row['data_aquisicao']}</td>"?>

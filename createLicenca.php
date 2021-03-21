@@ -16,7 +16,7 @@ $descricao_licenca = mysqli_real_escape_string($link, $_POST['descricao_sistema'
 $periodo_licenca = mysqli_real_escape_string($link, $_POST['periodo_licenca']);
 
 
-$query = "INSERT into licenca (nome_licenca, tipo_sistema, versao_sistema, descricao_sistema, periodo_licenca) 
+$query = "INSERT INTO licenca (nome_licenca, tipo_sistema, versao_sistema, descricao_sistema, periodo_licenca) 
 VALUES ('{$licenca}', '{$tipo_licenca}', '{$versao_licenca}', '{$descricao_licenca}', {$periodo_licenca});" ;
 
 if (mysqli_query($link, $query)) {

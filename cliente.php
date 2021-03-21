@@ -131,8 +131,18 @@ $clientes = mysqli_query($link, $query_cliente);
 
                 <div class="row mb-3">
                     <h3 class="col-12 mb-5">Criar Assinatura:</h3>
-                    <label class="col-md-4" for="cnpj_cliente">CNPJ:</label>
-                    <input class="col-md-7" type="text"  id="cnpj_cliente" name="cnpj_cliente">
+                    <label class="col-md-4" for="as_id_cliente">CNPJ:</label>
+                    <select class="col-md-7" name="as_id_cliente" id="as_id_cliente">
+                        <?php 
+                            if (mysqli_num_rows($clientes) > 0){
+                                while($row = mysqli_fetch_array($clientes)){
+                                    $opt = "<option value={$row['id_cliente']}>{$row['cnpj_cliente']}</option>";
+                                    echo $opt;
+                                }
+                                $clientes = mysqli_query($link, $query_cliente);
+                            }
+                        ?>
+                    </select>
                 </div>
 
                 <div class="row mb-3 ">

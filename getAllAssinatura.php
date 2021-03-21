@@ -2,7 +2,7 @@
 session_start();
 include('./source/connect.php');
 include('./verifica_login.php');
-$query = 'call sp_get_all_assinaruras();';
+$query = 'SELECT id_aquisicao, cnpj_cliente, nome_licenca, tipo_sistema, versao_sistema, estacao, key_assinatura, data_aquisicao, date_final_aquisicao, atualizado, confirmado from assinaturas inner join cliente, licenca where id_cliente = fk_id_cliente and id_licenca = fk_id_licenca;';
 
 $result = mysqli_query($link, $query);
 

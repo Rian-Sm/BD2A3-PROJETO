@@ -20,10 +20,10 @@ $descricao_sistema = mysqli_real_escape_string($link, $_POST['descricao_sistema'
 $periodo_licenca = mysqli_real_escape_string($link, $_POST['periodo_licenca']);
 
 
-$query = "UPDATE licenca set nome_licenca ='{$nome_licenca}', tipo_sistema = '{$tipo_licenca}', versao_sistema='{$versao_sistema}', descricao_sistema ='{$descricao_sistema}', periodo_licenca = {$periodo_licenca}
+$update = "UPDATE licenca set nome_licenca ='{$nome_licenca}', tipo_sistema = '{$tipo_licenca}', versao_sistema='{$versao_sistema}', descricao_sistema ='{$descricao_sistema}', periodo_licenca = {$periodo_licenca}
 where  id_licenca = {$id_licenca};";
 
-if (mysqli_query($link, $query)) {
+if (mysqli_query($link, $update)) {
     $_SESSION["autenticado"] = true;
     header('location: licenca.php');
     exit();

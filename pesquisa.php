@@ -5,7 +5,19 @@ include('./verifica_login.php');
 
 if(!empty($_GET['date_final'])){
     $date = $_GET['date_final']."-01";
-    $query = "CALL sp_get_licenca_date('{$date}')";
+    $query = "SELECT 
+    cnpj_cliente, nome_cliente,
+    nome_licenca, tipo_sistema,
+    versao_sistema, estacao,
+    key_assinatura,
+    data_aquisicao, date_final_aquisicao,
+    atualizado, confirmado from assinaturas
+    inner join cliente, licenca
+    where 
+    year(date_final_aquisicao) = year('{$date}')
+    and month(date_final_aquisicao) = month('{$date}')
+    and fk_id_cliente = id_cliente 
+    and id_licenca = fk_id_licenca;";
 }
 ?>
 

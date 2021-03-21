@@ -14,7 +14,6 @@ if(!empty($_GET['date_final'])){
 <head>
     <meta charset="UTF-8">
 	<title>Painel html</title>
-	<link rel="stylesheet" type="text/css" href="./css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
 <body class="d-flex flex-column h-100">
@@ -28,7 +27,7 @@ if(!empty($_GET['date_final'])){
 
             <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                 <div class = "nav-item mr-5">
-                    <a href="./logout.php">
+                    <a href="./logout.php.php">
                         <button  type="button" class="btn btn-danger px-5">Logout</button>
     
                     </a>
@@ -57,7 +56,7 @@ if(!empty($_GET['date_final'])){
         
         
         <div class="row mb-3 container">
-            <form class="col-md-12 col-sm-12" method="GET" action="./pesquisa">
+            <form class="col-md-12 col-sm-12" method="GET" action="./pesquisa.php">
                 <div class="row mb-3">
                     <label class="col-md-4" for="date_final">Data Final da Assinatura: 
                     </label>
@@ -125,6 +124,9 @@ if(!empty($_GET['date_final'])){
     </footer>
     
 </div>
- 
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap.css">
 </body>
 </html>

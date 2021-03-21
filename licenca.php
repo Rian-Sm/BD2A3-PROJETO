@@ -11,7 +11,6 @@ $result = mysqli_query($link, $query);
 <head>
     <meta charset="UTF-8">
 	<title>Painel html</title>
-	<link rel="stylesheet" type="text/css" href="./css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
 <body class="d-flex flex-column h-100">
@@ -25,7 +24,7 @@ $result = mysqli_query($link, $query);
 
             <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                 <div class = "nav-item mr-5">
-                    <a href="./logout.php">
+                    <a href="./logout.php.php">
                         <button  type="button" class="btn btn-danger px-5">Logout</button>
     
                     </a>
@@ -53,7 +52,7 @@ $result = mysqli_query($link, $query);
         <?php unset($_SESSION['autenticado']); endif; ?>
 
         <div class="row mb-3">
-            <form class="col-md-6 col-sm-12" method="POST" action="./createLicenca">
+            <form class="col-md-6 col-sm-12" method="POST" action="./createLicenca.php">
                 <div class="row mb-3 mt-5">
                     <h3 class="col-12 mb-5">Nova Licença:</h2>
                     <label class="col-md-4" for="nome_licenca" >Nome do licença:</label>
@@ -89,7 +88,7 @@ $result = mysqli_query($link, $query);
                     <button col="col" type="submit" class="btn btn-primary">Enviar</button> 
                 </div>
             </form> 
-            <form class="col-md-6 col-sm-12" method="POST" action="./alterateLicenca">
+            <form class="col-md-6 col-sm-12" method="POST" action="./alterateLicenca.php">
                 <div class="row mb-3 mt-5">
                     <h3 class="col-12 mb-5">Alterar licença:</h2>
                     <label class="col-md-4" for="id_licenca_at" >ID da licença:</label>
@@ -134,14 +133,14 @@ $result = mysqli_query($link, $query);
             <div class="col-md-8">
             <h3>Clientes cadastrados:</h3>
                     <div class="embed-responsive embed-responsive-21by9">
-                    <iframe class="embed-responsive-item"src="./getAllLicenca"></iframe>
+                    <iframe class="embed-responsive-item"src="./getAllLicenca.php"></iframe>
                     </div>           
             </div>
             </div>
         </div>
 
         <div class="row justify-content-center">    
-            <form class="col-md-6 alert alert-danger" role="alert" method="POST" action="./deleteLicenca">
+            <form class="col-md-6 alert alert-danger" role="alert" method="POST" action="./deleteLicenca.php">
                 <div class="row mb-3 mt-5">
                     <h3 class="col-12 mb-5 ">Deletar dados:</h3>
 
@@ -164,6 +163,8 @@ $result = mysqli_query($link, $query);
     </footer>
     
 </div>
- 
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap.css">
 </body>
 </html>

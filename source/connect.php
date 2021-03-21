@@ -1,8 +1,8 @@
 <?php 
-define('HOST', 'localhost');
-define('USUARIO', 'snow');
-define('SENHA', 'snow');
-define('DB', 'php_connection');
+define('HOST'   , 'localhost');
+define('USUARIO', "snow");
+define('SENHA'  , "snow");
+define('DB'     , 'php_connection');
 
 $link = mysqli_connect(HOST, USUARIO, SENHA, DB);
 

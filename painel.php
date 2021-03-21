@@ -21,7 +21,7 @@ include('./verifica_login.php');
 
         <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
             <div class = "nav-item mr-5">
-                <a href="./logout">
+                <a href="./logout.php">
                 <button  type="button" class="btn btn-danger px-5">Logout</button>
                 </a>
             </div>
@@ -36,7 +36,7 @@ include('./verifica_login.php');
                 <div class="card-body">
                     <h5 class="card-title">Pesquisar</h5>
                     <p class="card-text">pesquisar por assinaturas</p>
-                    <a href="./pesquisa" class="btn btn-primary">Pesquisa</a>
+                    <a href="./pesquisa.php" class="btn btn-primary">Pesquisa</a>
                 </div>
             </div>
             </div>
@@ -46,7 +46,7 @@ include('./verifica_login.php');
                     <div class="card-body">
                         <h5 class="card-title">Cadastro de clientes</h5>
                         <p class="card-text">Cadastre clientes</p>
-                        <a href="./cliente" class="btn btn-primary">Cadastre</a>
+                        <a href="./cliente.php" class="btn btn-primary">Cadastre</a>
                     </div>
             </div>
             </div>
@@ -56,7 +56,7 @@ include('./verifica_login.php');
                     <div class="card-body">
                         <h5 class="card-title">Cadastro de Licenças</h5>
                         <p class="card-text">Cadastre Licenças</p>
-                        <a href="./licenca" class="btn btn-primary">Cadastre</a>
+                        <a href="./licenca.php" class="btn btn-primary">Cadastre</a>
                     </div>
             </div>
             </div>
@@ -66,7 +66,7 @@ include('./verifica_login.php');
                     <div class="card-body">
                         <h5 class="card-title">Cadastro de Assinatura</h5>
                         <p class="card-text">Cadastre Assinatura</p>
-                        <a href="./cliente#assinatura" class="btn btn-primary">Cadastre</a>
+                        <a href="./cliente.php#assinatura" class="btn btn-primary">Cadastre</a>
                     </div>
             </div>
             </div>
@@ -79,7 +79,10 @@ include('./verifica_login.php');
         </div>
     </footer>
 </div>
- 
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap.css">
 </body>
 </html>
 
